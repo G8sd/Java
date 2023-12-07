@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java</title>
+    <script>
+        function Delete() {
+        var div = document.getElementById('text');
+        div.style.display='none';
+        }
+
+        function GreenColor(){
+            var button= document.getElementById('GreenButt');
+            var text = document.getElementById("text1");
+
+            if (text.style.color === 'green') {
+                text.style.color = 'black';
+            } else {
+                text.style.color = 'green';
+            }
+        }
+
+        function ChangeColor(color) {
+            document.getElementById('Div').style.backgroundColor= color;
+        }
+
+        function size() {
+            var image = document.getElementById("Image");
+            var width = image.width;
+            var height = image.height;
+            var newwidth = image.width*0.9;
+            var newheight = image.height*0.9;
+            image.style.width = newwidth + "px";
+            image.style.height = newheight + "px"; 
+        }
+
+        function displayData() {
+            var input = document.getElementById("inputField");
+            var inputValue = input.value;
+            var output = document.getElementById("output");
+            output.textContent = inputValue;
+        }
+        function toggleTheme() {
+            var div = document.getElementById("Phon");
+            div.classList.toggle("light-theme");
+            div.classList.toggle("dark-theme");
+        }
+    </script>
+     <link rel="stylesheet" href="Csds/cds.css">
+</head>
+<body>
+<div>
+    <div class="color1">
+        <div id="text">
+            <p class="text">
+                Текст был удален  
+            </p>
+            <div class="button-line">
+                <button class="button" onclick='Delete()'>Нажми</button>
+            </div>
+        </div>
+    </div>
+    <div class="color2">
+        <div id="text1">
+            <p class="text">
+            Текст
+            </p>
+            <div class="button-line">
+                <button class="button" id="'GreenButt" onclick="GreenColor()">Нажми</button>
+            </div>
+        </div>
+    </div>
+    <div class="color3">
+        <div id="Div" style="border: 1px solid black;" >
+            <p class="text">
+                Нажми на кнопку и цвет поменяется
+            </p>
+        </div>
+        <div class="button-line">
+            <button class="button" onclick="ChangeColor('red')">Красный</button>
+            <button class="button" onclick="ChangeColor('blue')">Голубой</button>
+            <button class="button" onclick="ChangeColor('green')">Зелёный</button>
+        </div>
+    </div>
+    <div class="color4">
+        <img id="Image" src="img/gray.webp" width="150px" height="150px">
+        
+        <div class="button-line">
+            <button class="button" onclick="size()">Уменьшить</button>
+        </div>
+    </div>
+    <div class="color5">
+        <input class="center" type="text" id="inputField">
+        <div id="output"></div>
+        <button class="button" onclick="displayData()">Вывести данные</button>
+        
+    </div>
+    <div>
+        <style>
+            .light-theme {
+              background-color: white;
+              color: black;
+              border: dashed black;
+            }
+        
+            .dark-theme {
+              background-color: #696969;
+              color: white;
+              border: dashed white;
+            }
+          </style>
+        <div id="Phon" class="light-theme">
+          <p class="text">Текст страницы</p>
+        </div>
+        <button class="button1" onclick="toggleTheme()">Переключить тему</button>
+    </div>
+</div>
+     
+</body>
+</html>
